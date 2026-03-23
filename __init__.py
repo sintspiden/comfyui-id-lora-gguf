@@ -8,6 +8,7 @@ from typing_extensions import override
 from comfy_api.latest import ComfyExtension, io
 
 from .nodes_loader import IDLoraGGUFModelLoader
+from .nodes_patcher import IDLoraGGUFPatcher
 from .nodes_prompt_encoder import IDLoraGGUFPromptEncoder
 from .nodes_sampler import IDLoraGGUFSampler
 
@@ -17,6 +18,7 @@ class IDLoraGGUFExtension(ComfyExtension):
     async def get_node_list(self) -> list[type[io.ComfyNode]]:
         return [
             IDLoraGGUFModelLoader,
+            IDLoraGGUFPatcher,
             IDLoraGGUFPromptEncoder,
             IDLoraGGUFSampler,
         ]
